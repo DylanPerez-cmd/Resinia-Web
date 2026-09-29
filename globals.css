@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body { @apply bg-fondo text-tinta antialiased; }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-ambar; }
+}
+@layer components {
+  .btn { @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition duration-200; }
+  .btn-primary { @apply bg-tinta text-white hover:bg-tinta/85; }
+  .btn-soft { @apply border border-tinta/30 text-tinta hover:bg-tinta hover:text-white; }
+  .btn-wa { @apply bg-[#1FA855] text-white hover:bg-[#188a45]; }
+  .input { @apply w-full rounded-lg border border-tinta/20 bg-white px-3 py-2.5 text-sm; }
+  .panel { @apply rounded-xl bg-white p-5 border border-tinta/10; }
+  .arco { border-radius: 999px 999px 1.25rem 1.25rem; }
+}
+@keyframes entrar { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.entrar { animation: entrar .8s ease both; }
+.entrar-2 { animation: entrar .8s .15s ease both; }
+@media (prefers-reduced-motion: reduce) { .entrar, .entrar-2 { animation: none; } * { transition: none !important; } }
